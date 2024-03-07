@@ -6,9 +6,9 @@
 * 
 * https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
 * 
-* Name: Tanisha Singh Student ID: 134891225 Date: 2024-03-07
+* Name: Tanisha Singh, Student ID: 134891225, Date: 2024-03-07
 *
-* Published URL: https://github.com/tanisha-singh-seneca/WEB_322_NRA_A3.git
+* Published URL: https://lime-itchy-macaw.cyclic.app/
 *
 ********************************************************************************/
 
