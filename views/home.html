@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <!-- Website Logo -->
+                        <a href="/" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">Lego Collection</span>
+                        </a>
+                    </div>
+
+                    <!-- Primary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="/" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Home</a>
+                        <a href="/about" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</a>
+
+                        <!-- Dropdown -->
+                        <div class="dropdown relative">
+                            <button class="py-2 px-2 text-gray-500 font-semibold rounded hover:bg-gray-100">
+                                Themes 
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu absolute hidden h-auto flex pt-5 flex-col bg-white shadow-lg">
+                                <a href="/lego/sets?theme=Space" class="py-2 px-4 text-gray-700 hover:bg-gray-100">Space</a>
+                                <a href="/lego/sets?theme=Castle" class="py-2 px-4 text-gray-700 hover:bg-gray-100">Castle</a>
+                                <a href="/lego/sets?theme=City" class="py-2 px-4 text-gray-700 hover:bg-gray-100">City</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Icon -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                            x-show="!showMenu"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li class="active">
+                    <a href="/" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <div class="hero min-h-screen" style="background-image: url('path_to_your_hero_image');">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+                <p class="mb-5">Welcome to the Lego Collection. Discover the world of Lego by exploring sets of various themes.</p>
+                <a href="/lego/sets" class="btn btn-primary">Explore Now</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Grid of Cards -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Card 1 -->
+            <div class="card w-full bg-base-100 shadow-xl">
+                <figure><img src="https://cdn.rebrickable.com/media/sets/001-1.jpg" alt="Gears"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Gears</h2>
+                    <p>Classic set from 1965 with 43 parts.</p>
+                    <a href="/lego/sets/001-1" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card w-full bg-base-100 shadow-xl">
+                <figure><img src="https://cdn.rebrickable.com/media/sets/0011-2.jpg" alt="Town Mini-Figures"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Town Mini-Figures</h2>
+                    <p>Iconic mini-figures from 1979 with 12 parts.</p>
+                    <a href="/lego/sets/0011-2" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card w-full bg-base-100 shadow-xl">
+                <figure><img src="https://cdn.rebrickable.com/media/sets/0011-3.jpg" alt="Castle 2 for 1 Bonus Offer"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Castle 2 for 1 Bonus Offer</h2>
+                    <p>Special promotion from 1987.</p>
+                    <a href="/lego/sets/0011-3" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card w-full bg-base-100 shadow-xl">
+                <figure><img src="https://cdn.rebrickable.com/media/sets/0012-1.jpg" alt="Space Mini-Figures"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Space Mini-Figures</h2>
+                    <p>Celebrated space explorers from 1979 with 12 parts.</p>
+                    <a href="/lego/sets/0012-1" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./modules/legoSets.js"></script>
+    <script src="./server.js"></script>
+</body>
+</html>
