@@ -92,7 +92,7 @@ app.use((req, res) => {
 //     });
 
 // app.get("/", (req, res) => {
-//     res.send("Assignment 3: Tanisha Singh - 134891225");
+//     res.send("Assignment 2: Tanisha Singh - 134891225");
 // });
 
 // app.get("/lego/sets", (req, res) => {
