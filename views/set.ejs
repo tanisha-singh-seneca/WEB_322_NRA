@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= set.name %> - LEGO Set Details</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-gray-100">
+    <%- include('partials/navbar', {page: 'set'}) %>
+
+
+    <!-- Hero Section -->
+    <div class="hero min-h-screen" style="background-image: url('<%= set.img_url %>');">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold"><%= set.name %></h1>
+                <p class="mb-5">Below, you will find detailed information about the set:</p>
+                <p>Theme: <%= set.theme %></p>
+                <p>Year: <%= set.year %></p>
+                <p>Number of Parts: <%= set.num_parts %></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Quote Section -->
+    <div class="quote-container text-center py-8">
+        <blockquote id="quoteText" class="text-2xl italic">"Quote..."</blockquote>
+        <cite id="quoteAuthor" class="text-xl mt-4">- Author</cite>
+    </div>
+
+
+    <!-- Back Button Section -->
+    <div class="text-center py-4">
+        <a href="#" onclick="history.back(); return false;" class="btn btn-primary">Go Back</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("https://api.quotable.io/random")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("quoteText").textContent = `"${data.content}"`;
+                    document.getElementById("quoteAuthor").textContent = `- ${data.author}`;
+                })
+                .catch(error => {
+                    document.getElementById("quoteText").textContent = "Quote loading failed.";
+                    document.getElementById("quoteAuthor").textContent = "";
+                    console.error("Error fetching quote:", error);
+                });
+        });
+    </script>
+</body>
+</html>

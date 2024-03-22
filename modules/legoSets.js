@@ -6,9 +6,9 @@ let sets = [];
 function initialize() {
     return new Promise((resolve, reject) => {
         try {
-            sets = setData.map(set => {
-                const theme = themeData.find(theme => theme.id === set.theme_id);
-                return { ...set, theme: theme.name };
+            setData.forEach(set => {
+                let setTheme = { ...set, theme: themeData.find(theme => theme.id === set.theme_id).name }
+                sets.push(setTheme);
             });
             console.log("LEGO data initialized");
             resolve();
@@ -21,7 +21,7 @@ function initialize() {
 
 function getAllSets() {
     return new Promise((resolve, reject) => {
-        if (sets.length > 0) {
+        if (sets) {
             resolve(sets);
         } else {
             reject("Sets array is empty");
@@ -31,9 +31,9 @@ function getAllSets() {
 
 function getSetByNum(setNum) {
     return new Promise((resolve, reject) => {
-        const set = sets.find(set => set.set_num === setNum);
-        if (set) {
-            resolve(set);
+        let filteredSet = sets.find(set => set.set_num === setNum);
+        if (filteredSet) {
+            resolve(filteredSet);
         } else {
             reject("Set not found");
         }
@@ -42,10 +42,10 @@ function getSetByNum(setNum) {
 
 function getSetsByTheme(theme) {
     return new Promise((resolve, reject) => {
-        const filteredSets = sets.filter(set =>
+        let filteredSets = sets.filter(set =>
             set.theme.toLowerCase().includes(theme.toLowerCase())
         );
-        if (filteredSets.length > 0) {
+        if (filteredSets) {
             resolve(filteredSets);
         } else {
             reject("No sets found for the provided theme");

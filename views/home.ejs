@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO Collection</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-gray-100">
+    <%- include('partials/navbar', {page: 'home'}) %>
+    
+
+    <!-- Hero Section -->
+    <div class="hero min-h-screen" style="background-image: url('/path_to_your_hero_background_image.jpg');">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Hello Mates!</h1>
+                <p class="mb-5">Welcome to the LEGO Collection. Discover the world of LEGO by exploring sets of various themes.</p>
+                <a href="/lego/sets" class="btn btn-primary">Explore Now</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Featured Sets Section -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-4xl font-bold mb-4">Featured Sets</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <% featuredSets.forEach(set => { %>
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img src="<%= set.img_url %>" alt="<%= set.name %>"></figure>
+                    <div class="card-body">
+                        <h2 class="card-title"><%= set.name %></h2>
+                        <p>Theme: <%= set.theme %></p>
+                        <p>Year: <%= set.year %></p>
+                        <div class="card-actions justify-end">
+                            <a href="/lego/sets/<%= set.set_num %>" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>
